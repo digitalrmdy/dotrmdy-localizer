@@ -4,6 +4,15 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <LangVersion>latest</LangVersion>
         <Nullable>enable</Nullable>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <PackageId>Localizer.SourceGenerator</PackageId>
+        <PackageDescription>This package contains a sourcegenerator for generating translations classes at compile-time based on a csv file.</PackageDescription>
+        <IncludeBuildOutput>false</IncludeBuildOutput> <!-- Do not include the generator as a lib dependency -->
+        <NoWarn>$(NoWarn);NU5128</NoWarn>
     </PropertyGroup>
 
     <!-- The following libraries include the source generator interfaces and types we need -->

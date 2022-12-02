@@ -3,7 +3,7 @@ using Nuke.Common.CI.AzurePipelines;
 [AzurePipelines(
     suffix: "PR",
     AzurePipelinesImage.UbuntuLatest,
-    AutoGenerate = true,
+    AutoGenerate = false,
     FetchDepth = 0,
     TriggerBatch = true,
     PullRequestsBranchesInclude = new[] { "main" },
@@ -14,10 +14,10 @@ using Nuke.Common.CI.AzurePipelines;
 [AzurePipelines(
     suffix: "Publish",
     AzurePipelinesImage.UbuntuLatest,
-    AutoGenerate = true,
+    AutoGenerate = false,
     FetchDepth = 0,
     TriggerBatch = true,
-    TriggerTagsInclude = new[] { "*.*.*" },
+    TriggerTagsInclude = new[] { "'*.*.*'" },
     InvokedTargets = new[] { nameof(Compile), nameof(Publish) },
     NonEntryTargets = new[] { nameof(Clean), nameof(Restore) },
     CacheKeyFiles = new string[0],

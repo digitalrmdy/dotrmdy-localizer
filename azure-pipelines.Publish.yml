@@ -15,6 +15,7 @@
 # ------------------------------------------------------------------------------
 
 trigger:
+  batch: true
   tags:
     include:
       - '*.*.*'
@@ -26,34 +27,15 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     jobs:
-      - job: Compile
-        displayName: 'Compile'
-        dependsOn: [  ]
+      - job: Publish
+        displayName: 'Publish'
         steps:
           - checkout: self
             fetchDepth: 0
           - task: CmdLine@2
             inputs:
-              script: './build.cmd Restore Compile --skip'
-      - job: Pack
-        displayName: 'Pack'
-        dependsOn: [ Compile ]
-        steps:
-          - checkout: self
-            fetchDepth: 0
-          - task: CmdLine@2
-            inputs:
-              script: './build.cmd Clean Pack --skip'
+              script: './build.cmd Publish'
           - task: PublishBuildArtifacts@1
             inputs:
               artifactName: artifacts
               pathtoPublish: 'artifacts'
-      - job: Publish
-        displayName: 'Publish'
-        dependsOn: [ Pack ]
-        steps:
-          - checkout: self
-            fetchDepth: 0
-          - task: CmdLine@2
-            inputs:
-              script: './build.cmd Publish --skip'

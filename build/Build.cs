@@ -1,7 +1,9 @@
+using System.Collections.Generic;
 using Nuke.Common;
 using Nuke.Common.CI;
 using Nuke.Common.IO;
 using Nuke.Common.ProjectModel;
+using Nuke.Common.Tooling;
 using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Tools.GitVersion;
 using Nuke.Common.Utilities.Collections;
@@ -74,11 +76,22 @@ partial class Build : NukeBuild
                 .SetVersion(GitVersion.NuGetVersion)
                 .SetOutputDirectory(ArtifactsDirectory));
         });
+    
+    [Secret] [Parameter] readonly string MyGetFeedUrl;
+    [Secret] [Parameter] readonly string MyGetApiKey;
 
     Target Publish => _ => _
         .DependsOn(Pack)
+        .Requires(() => !string.IsNullOrEmpty(MyGetFeedUrl) && !string.IsNullOrEmpty(MyGetApiKey))
         .Executes(() =>
         {
-            // NOP
+            IEnumerable<AbsolutePath> artifactPackages = ArtifactsDirectory.GlobFiles("*.nupkg");
+            
+            DotNetNuGetPush(s => s
+                .SetSource(MyGetFeedUrl)
+                .SetApiKey(MyGetApiKey)
+                .EnableSkipDuplicate()
+                .CombineWith(artifactPackages, (_, v) => _
+                    .SetTargetPath(v)));
         });
 }

@@ -14,6 +14,9 @@
 # </auto-generated>
 # ------------------------------------------------------------------------------
 
+variables:
+  - group: MyGet-RMDY-Mobile-dotnet-localizer
+
 trigger:
   batch: true
   tags:
@@ -35,6 +38,9 @@ stages:
           - task: CmdLine@2
             inputs:
               script: './build.cmd Publish'
+            env:
+              MyGetFeedUrl: $(MyGetFeedUrl)
+              MyGetApiKey: $(MyGetApiKey)
           - task: PublishBuildArtifacts@1
             inputs:
               artifactName: artifacts

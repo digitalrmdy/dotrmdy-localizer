@@ -74,6 +74,7 @@ partial class Build : NukeBuild
                 .SetProject(Solution.Localizer_SourceGenerator)
                 .SetConfiguration(Configuration)
                 .SetVersion(GitVersion.NuGetVersion)
+                .SetProperty("IsPack", "true")
                 .SetOutputDirectory(ArtifactsDirectory));
         });
     

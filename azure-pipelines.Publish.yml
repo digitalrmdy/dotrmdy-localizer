@@ -15,7 +15,7 @@
 # ------------------------------------------------------------------------------
 
 variables:
-  - group: MyGet-RMDY-Mobile-dotnet-localizer
+  - group: dotRMDY-MyGet
 
 trigger:
   batch: true
@@ -36,12 +36,14 @@ stages:
           - checkout: self
             fetchDepth: 0
           - task: CmdLine@2
+            displayName: 'Run: Publish'
             inputs:
               script: './build.cmd Publish'
             env:
-              MyGetFeedUrl: $(MyGetFeedUrl)
+              MyGetUsername: $(MyGetUsername)
               MyGetApiKey: $(MyGetApiKey)
           - task: PublishBuildArtifacts@1
+            displayName: 'Publish: artifacts'
             inputs:
               artifactName: artifacts
-              pathtoPublish: 'artifacts'
+              pathToPublish: 'artifacts'

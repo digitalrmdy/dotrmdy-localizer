@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using Localizer.SourceGenerator.Models;
+using dotRMDY.Localizer.SourceGenerator.Models;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Text;
 
-namespace Localizer.SourceGenerator
+namespace dotRMDY.Localizer.SourceGenerator
 {
     [Generator]
     public class Generator : IIncrementalGenerator

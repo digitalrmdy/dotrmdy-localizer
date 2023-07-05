@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.csproj", "{D8A8F670-BE38-42E7-993F-AD4013A9A62E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Localizer.SourceGenerator", "src\Localizer.SourceGenerator\Localizer.SourceGenerator.csproj", "{58BDD8B6-9742-4E2A-A60D-36A159D80AA0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotRMDY.Localizer.SourceGenerator", "source\dotRMDY.Localizer.SourceGenerator\dotRMDY.Localizer.SourceGenerator.csproj", "{58BDD8B6-9742-4E2A-A60D-36A159D80AA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "Build Schema",
   "$ref": "#/definitions/build",
+  "title": "Build Schema",
   "definitions": {
     "build": {
       "type": "object",
@@ -47,7 +47,7 @@
           "type": "string",
           "default": "Secrets must be entered via 'nuke :secrets [profile]'"
         },
-        "MyGetFeedUrl": {
+        "MyGetUsername": {
           "type": "string",
           "default": "Secrets must be entered via 'nuke :secrets [profile]'"
         },
@@ -84,7 +84,10 @@
               "Compile",
               "Pack",
               "Publish",
-              "Restore"
+              "PublishToMyGet",
+              "Restore",
+              "RunTests",
+              "UpdateMyGetFeedCredentials"
             ]
           }
         },
@@ -102,7 +105,10 @@
               "Compile",
               "Pack",
               "Publish",
-              "Restore"
+              "PublishToMyGet",
+              "Restore",
+              "RunTests",
+              "UpdateMyGetFeedCredentials"
             ]
           }
         },

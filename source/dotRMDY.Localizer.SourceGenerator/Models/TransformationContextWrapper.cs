@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Localizer.SourceGenerator.Models
+namespace dotRMDY.Localizer.SourceGenerator.Models
 {
     internal sealed class TransformationContextWrapper
     {

@@ -3,7 +3,7 @@
 	"profiles": {
 		"DebugRoslynSourceGenerator-ConsumerBase": {
 			"commandName": "DebugRoslynComponent",
-			"targetProject": "../dotRMDY.Localizer.Sandbox/dotRMDY.Localizer.Sandbox.csproj"
+			"targetProject": "../dotRMDY.Localizer.SourceGenerator.Sample/dotRMDY.Localizer.SourceGenerator.Sample.csproj"
 		}
 	}
 }

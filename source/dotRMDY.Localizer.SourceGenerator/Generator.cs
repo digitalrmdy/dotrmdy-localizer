@@ -72,6 +72,10 @@ public partial class Generator : IIncrementalGenerator
 				WriteTranslations(sourceContext).ToSourceText());
 
 			productionContext.AddSource(
+				sourceContext.Namespace + ".TranslationKey.g.cs",
+				WriteTranslationKeyEnum(sourceContext).ToSourceText());
+
+			productionContext.AddSource(
 				sourceContext.Namespace + ".ITranslationProvider.g.cs",
 				WriteITranslationProvider(sourceContext).ToSourceText());
 

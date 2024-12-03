@@ -92,5 +92,5 @@ partial class Build : NukeBuild
         });
 
     Target Publish => _ => _
-        .DependsOn(PublishToDotRmdyAzureArtifacts);
+        .DependsOn(PublishToNugetOrg);
 }

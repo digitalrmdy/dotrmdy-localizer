@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<TargetFramework>net7.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>false</IsPackable>
@@ -13,7 +13,7 @@
 	</ItemGroup>
 
 	<Import Project="..\dotRMDY.Localizer.SourceGenerator\dotRMDY.Localizer.SourceGenerator.props" />
-	
+
 	<ItemGroup>
 		<ProjectReference Include="..\dotRMDY.Localizer.SourceGenerator\dotRMDY.Localizer.SourceGenerator.csproj" OutputItemType="analyzer" PrivateAssets="all" />
 	</ItemGroup>

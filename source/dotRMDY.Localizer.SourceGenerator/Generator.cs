@@ -6,7 +6,7 @@ using Microsoft.CodeAnalysis;
 
 namespace dotRMDY.Localizer.SourceGenerator;
 
-[Generator(LanguageNames.CSharp)]
+[Generator]
 public partial class Generator : IIncrementalGenerator
 {
 	public void Initialize(IncrementalGeneratorInitializationContext context)
